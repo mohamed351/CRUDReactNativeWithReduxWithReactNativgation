@@ -8,6 +8,9 @@ import EmployeeItemCompoent from '../components/EmployeeItemCompoent';
 
 
 const EmployeesList = (props) => {
+  //console.log();
+ // props.navigation.navigate("")
+
   useEffect(() => {
     props.fetchAllEmployees();  
   }, [])
@@ -15,7 +18,7 @@ const EmployeesList = (props) => {
   return (
     <View>
       <View style={{width:"50%" ,marginTop:StatusBar.currentHeight}}>
-        <Button title="Create"></Button>
+        <Button title="Create" onPress={() => props.navigation.navigate("Create Employees")}></Button>
       </View>
       <FlatList data={props.Employees}
         keyExtractor={(item, index) => index.toString()}

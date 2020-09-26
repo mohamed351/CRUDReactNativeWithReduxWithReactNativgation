@@ -4,6 +4,7 @@ import { View, StyleSheet, Text } from 'react-native';
 import { Provider} from 'react-redux';
 import { store } from './redux/store'
 import EmployeesList from './screens/EmployeesList';
+import EmployeesForm from './screens/EmployeesForm';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
@@ -15,7 +16,8 @@ export default function App() {
     <Provider store={store}>
       <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="Home" component={EmployeesList} />
+          <Stack.Screen  name="Employees" component={EmployeesList} />
+          <Stack.Screen  name="Create Employees" component={EmployeesForm}/>
       </Stack.Navigator>
         </NavigationContainer>
    </Provider>
