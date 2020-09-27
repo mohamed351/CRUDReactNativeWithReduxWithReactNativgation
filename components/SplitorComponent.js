@@ -10,6 +10,8 @@ const styles = StyleSheet.create({
     splitorStyle: {
         backgroundColor: "#333",
         width: "100%",
-        height: 1
+        height: 1,
+   
+       
     }
 })

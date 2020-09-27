@@ -17,13 +17,16 @@ const EmployeesList = (props) => {
   
   return (
     <View>
-      <View style={{width:"50%" ,marginTop:StatusBar.currentHeight}}>
+      <View style={{width:"50%",marginTop:StatusBar.currentHeight}}>
         <Button title="Create" onPress={() => props.navigation.navigate("Create Employees")}></Button>
       </View>
-      <FlatList data={props.Employees}
+      <View>
+      <FlatList  data={props.Employees}
         keyExtractor={(item, index) => index.toString()}
         renderItem={({ item }) => <EmployeeItemCompoent info={item} />}
-        ItemSeparatorComponent={()=> <SplitorComponent/>}></FlatList>
+          ItemSeparatorComponent={() => <SplitorComponent />}></FlatList>
+      </View>
+     
      </View>
   )
 }

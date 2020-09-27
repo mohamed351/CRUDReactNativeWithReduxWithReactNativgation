@@ -18,11 +18,11 @@ const styles = StyleSheet.create({
         backgroundColor: "#ccc",
         padding: 10,
         marginVertical: 10,
-        borderRadius:25
+        borderRadius:20
             
     },
     TextInputStyle: {
-        marginLeft:12
+        marginLeft:10
     },
     IconTextItem: {
         marginLeft:6

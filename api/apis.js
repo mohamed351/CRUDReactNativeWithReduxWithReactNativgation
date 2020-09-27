@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const baseURL = "http://172.18.61.81:9195/api/"
+const baseURL = "http://192.168.1.18:9195/api/"
 
 
 

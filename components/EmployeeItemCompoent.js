@@ -1,5 +1,7 @@
 import React from 'react';
-import { StyleSheet,Text,View,Button } from 'react-native';
+import { StyleSheet, Text, View, Button } from 'react-native';
+import AppButton from './AppButton';
+
 
 export default function EmployeeItemCompoent(props) {
     return (
@@ -9,12 +11,14 @@ export default function EmployeeItemCompoent(props) {
           </View>
         
           <View style={styles.containerButtons}>
+         
         
-                <Button color="red" title="Delete"></Button>
-                <Button color="green" title="Details"></Button>
-                <Button title="Edit"></Button>
+          <AppButton title="Delete"  color="#e84118" > </AppButton>
+     
+          <AppButton title="Details"  color="#44bd32" > </AppButton>
+          <AppButton title="Edit"  color="#487eb0" > </AppButton>
           </View>
-    
+           
           </View>
       );
   
