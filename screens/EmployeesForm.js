@@ -2,11 +2,21 @@ import React from 'react';
 import { View, StyleSheet, Button, TextInput } from 'react-native'
 import InputText from '../components/InputText';
 import { Ionicons } from '@expo/vector-icons';
-import { Formik } from 'formik';
+import { Formik, move } from 'formik';
 import { connect } from 'react-redux';
 import * as action from '../redux/actions/employeesActions';
+import { Employee } from '../model/employees';
 
- const  EmployeesForm =(props) => {
+
+
+const EmployeesForm = (props) => {
+   OnFormSubmit=(values)=> {
+
+    var emp = new Employee(values.name, values.salary, values.departmentID);
+    props.CreateEmployee(emp)
+     props.navigation.navigate("Employees");
+  } 
+
    return (
      <Formik initialValues={
        {
@@ -14,7 +24,7 @@ import * as action from '../redux/actions/employeesActions';
          salary: 0,
          departmentID: 2
        }
-     } onSubmit={(values) => { console.log(values); props.CreateEmployee(values) }}>
+     } onSubmit={OnFormSubmit }>
       {({ handleSubmit, handleChange }) => (
         <>
     <View style={styles.formContainer}>

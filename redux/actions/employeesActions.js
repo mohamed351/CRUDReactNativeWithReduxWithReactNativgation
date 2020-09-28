@@ -22,9 +22,8 @@ export const fetchEmployees = () => dispatch => {
 }
 
 export const createEmployees = (data) => dispatch => {
-    var employe = new Employee(data.name, data.salary, data.departmentID);
-    console.log(employe);
-    apis.EmployeesAPI().create(employe).then(a => {
+  
+    apis.EmployeesAPI().create(data).then(a => {
         console.log(a);
         dispatch({
             type: ACTION_TYPES.CREATE,

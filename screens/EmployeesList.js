@@ -1,7 +1,8 @@
 import React, { useEffect} from 'react';
 import { connect } from 'react-redux';
 import { fetchEmployees } from '../redux/actions/employeesActions';
-import { Button, FlatList, StyleSheet, Text, View, Platform, StatusBar } from 'react-native';
+import {  FlatList, StyleSheet, View, Platform, StatusBar } from 'react-native';
+
 import SplitorComponent from '../components/SplitorComponent';
 import EmployeeItemCompoent from '../components/EmployeeItemCompoent'; 
 
@@ -16,10 +17,9 @@ const EmployeesList = (props) => {
   }, [])
   
   return (
+
     <View>
-      <View style={{width:"50%",marginTop:StatusBar.currentHeight}}>
-        <Button title="Create" onPress={() => props.navigation.navigate("Create Employees")}></Button>
-      </View>
+      
       <View>
       <FlatList  data={props.Employees}
         keyExtractor={(item, index) => index.toString()}
@@ -27,7 +27,10 @@ const EmployeesList = (props) => {
           ItemSeparatorComponent={() => <SplitorComponent />}></FlatList>
       </View>
      
-     </View>
+      </View>
+   
+         
+   
   )
 }
 const mapStateToProps = state => ({
